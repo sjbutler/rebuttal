@@ -1,6 +1,6 @@
 # rebuttal.sty
 
-The rebuttal LaTeX class provides environments and macros to format a point by point response to a journal article review. A section can be defined for each reviewer and points and responses are numbered. Labels can be added to the reviewers' points so that they can be cross referenced from responses.
+The rebuttal LaTeX class provides environments and macros to format a point by point response to a journal article review. A section can be defined for each reviewer and the reviewer's points are automatically numbered. Labels can be added to the reviewers' points so that they can be cross referenced from responses.
 
 The class can be used to format the rebuttal serially, i.e. reviewer's point followed by authors' response, or as two columns so that the authors' response appears alongside the reviewer's comment.
 
