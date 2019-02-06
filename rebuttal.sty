@@ -1,0 +1,64 @@
+%% Simple LaTeX class for responses to journal reviews
+%% 
+%% Copyright (2018) University of Skövde. 
+%% Written by Simon Butler as part of the LIM-IT project.
+%% Distributed under the terms of the CC-BY-SA v3.0 Licence
+%%
+%% The rebuttal class is based on macros defined by
+%% Friedemann Zenke and published in an example rebuttal at:
+%% https://fzenke.net/index.php/goodies/latex-rebuttal/
+%% Copyright (C) 2019 Friedemann Zenke, fzenke.net
+%% Based on examples by Dirk Eddelbuettel, Fran and others from 
+%%  https://tex.stackexchange.com/questions/2317/latex-style-or-macro-for-detailed-response-to-referee-report
+%% Licensed under cc by-sa 3.0 with attribution required.
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{rebuttal}[2019/02/06 v0.1.0 (S. Butler)]
+
+\RequirePackage{xifthen}
+
+\newcommand{\rebuttalskip}{\bigskip}
+
+\DeclareOption{table}{
+  \renewcommand{\rebuttalskip}{}
+}
+\DeclareOption{plain}{
+  \renewcommand{\rebuttalskip}{\bigskip}
+}
+\ExecuteOptions{plain}
+\ProcessOptions
+
+% define counters for reviewers and their points
+\newcounter{reviewer}
+\setcounter{reviewer}{0}
+\newcounter{point}[reviewer]
+\setcounter{point}{0}
+
+
+% Format the reviewer/point reference.
+\renewcommand{\thepoint}{\thereviewer.\arabic{point}} 
+
+% Heading for reviewer section
+\newcommand{\reviewersection}{\stepcounter{reviewer} \bigskip \hrule
+                  \section*{Reviewer \thereviewer}}
+
+\newenvironment{point}{%
+   \refstepcounter{point}{\rebuttalskip\noindent\textbf{Point~\thepoint}}:\ %
+  }{%
+    \par%
+}%
+
+\newenvironment{response}{%
+  \noindent\begin{sf}\textbf{Response}:\  %
+  } {%
+  \end{sf}\par%
+}%
+
+%% Short point and response
+\newcommand{\shortpoint}[1]{\refstepcounter{point}{\rebuttalskip\noindent\textbf{Point~\thepoint}}:\ ~#1\par }
+
+\newcommand{\shortresponse}[2][]{\noindent\begin{sf}\textbf{Response}:\  #2
+	\ifthenelse{\equal{#1}{}}{}{ \hfill \footnotesize (#1)}%
+	\end{sf}\par}
+
+\endinput

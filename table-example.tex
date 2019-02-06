@@ -1,0 +1,95 @@
+%% Example of table layout for rebuttal.sty
+%% 
+%% Copyright (2018) University of Skövde. 
+%% Written by Simon Butler as part of the LIM-IT project.
+%% Distributed under the terms of the CC-BY-SA v3.0 Licence
+%%
+%% 
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage[cm]{fullpage}
+
+\usepackage{longtable}
+
+\usepackage[table]{rebuttal}
+
+\usepackage[parfill]{parskip}
+\usepackage{lipsum}
+
+\begin{document}
+
+\section*{Article-UID: Response to Reviewers}
+
+% --- basic letter
+
+Dear Journal Editor
+
+Thank you for considering our paper ``A Journal Article'' for publication in the ``Journal of Something''. We are very grateful for the time the reviewers have taken to provide their extensive and constructive feedback.
+
+We address their points individually below and indicate the changes we have made in response.
+
+Yours sincerely
+
+\hspace{3cm}
+
+A Researcher
+
+
+% First reviewer
+\reviewersection
+
+\begin{longtable}{p{10.5cm}p{7cm}}
+\begin{point}
+  \lipsum[2]
+  \label{R1:Point}
+\end{point}
+&
+\begin{response}
+Thank you for drawing our attention to the omission. We have added both references as suggested.
+\end{response}  
+\\
+\shortpoint{\lipsum[20][2]}
+&
+\shortresponse{\lipsum[14][4]}
+\\
+\begin{point}
+\lipsum[11][2-6]
+\end{point}
+&
+\begin{response}
+Thank you for the suggestion. The second reviewer makes a related point and we address your comments in detail in our response to Point~\ref{R2:SimilarPoint}
+\end{response}
+\\
+\end{longtable}
+
+
+% Start a new reviewer section
+\reviewersection
+
+\begin{longtable}{p{10.5cm}p{7cm}}
+\begin{point}
+  \lipsum[8][1-4]
+\end{point}
+&
+\begin{response}
+\lipsum[9][1-3] See also our response to Point~\ref{R1:Point}
+\end{response}
+\\
+\shortpoint{\lipsum[10][6]}
+&
+\shortresponse{\lipsum[25][3-4]}
+\\
+\begin{point}
+  \label{R2:SimilarPoint}
+  \lipsum[5]
+\end{point}
+&
+\begin{response}
+  \lipsum[4][2-8]
+\end{response}
+\\
+\end{longtable}
+
+
+\end{document}
