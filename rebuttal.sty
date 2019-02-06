@@ -55,10 +55,8 @@
 }%
 
 %% Short point and response
-\newcommand{\shortpoint}[1]{\refstepcounter{point}{\rebuttalskip\noindent\textbf{Point~\thepoint}}:\ ~#1\par }
+\newcommand{\shortpoint}[1]{\refstepcounter{point}{\rebuttalskip\noindent\textbf{Point~\thepoint}}:\ #1\par }
 
-\newcommand{\shortresponse}[2][]{\noindent\begin{sf}\textbf{Response}:\  #2
-	\ifthenelse{\equal{#1}{}}{}{ \hfill \footnotesize (#1)}%
-	\end{sf}\par}
+\newcommand{\shortresponse}[1]{\noindent\begin{sf}\textbf{Response}:\ #1 \end{sf}\par}
 
 \endinput
