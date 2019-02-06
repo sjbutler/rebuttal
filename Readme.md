@@ -11,7 +11,25 @@ The file rebuttal.sty from this package can either be placed in the directory in
 
 `\usepackage[table]{rebuttal}`
 
-The package accepts two options 'plain' and 'table'; 'plain' is the default and the option can be omitted.
+The package accepts two options 'plain' and 'table'; 'plain' is the default option and can be omitted.
+
+The package provides a pair of environments for the reviewer's `point` and a `response`, as well as a pair of macros for a `shortpoint` and a `shortresponse`. A `reviewersection` macro is used to begin each reviewer's comments, e.g.:
+
+```
+\reviewersection
+
+\begin{point}
+  ...
+\end{point}
+\begin{response}
+  ...
+\end{response}
+
+\shortpoint{...}
+\shortresponse{...}
+
+```
+
 
 See the example files included in this package for illustrations of how each option might be used (both source and PDF versions are provided). The default, plain option is the easiest to use. The table option has some formatting issues, can be brittle when used, and requires further refinement.
 
@@ -19,7 +37,9 @@ See the example files included in this package for illustrations of how each opt
 The LaTeX package and examples are licensed under the terms of the Creative Commons CC-BY-SA v3.0. The origin of the macros and the licence are explained in the "History" section below.
 
 ## History
+The LaTeX package has evolved from reponses to a question on StackOverflow.
+
 * The LaTeX package and the example files are the work of Simon Butler.
-* The LaTeX macros that form part of this package are largely cosmetic revisions of macros published by Friedemann Zenke and available at https://fzenke.net/index.php/goodies/latex-rebuttal/ 
-* Friedemann Zenke created his example by revising macros published in responses to a question on StackOverflow (https://tex.stackexchange.com/questions/2317/latex-style-or-macro-for-detailed-response-to-referee-report) by Dirk Eddelbuettel, Fran and others.
+* The LaTeX macros that form the core of the package are largely cosmetic revisions of macros published by Friedemann Zenke and available at https://fzenke.net/index.php/goodies/latex-rebuttal/ 
+* Friedemann Zenke created his example by revising macros published by Dirk Eddelbuettel, Fran and others in responses to the following question on StackOverflow:  https://tex.stackexchange.com/questions/2317/latex-style-or-macro-for-detailed-response-to-referee-report.
 
